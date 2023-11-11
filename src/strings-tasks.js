@@ -146,11 +146,15 @@ function repeatString(str, times) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  console.log(str.indexOf(value));
+  return str.indexOf(value) >= 0
+    ? str.slice(0, str.indexOf(value)) +
+        str.slice(str.indexOf(value) + value.length)
+    : str;
 }
 
-/**
+/**-
  * Remove the last occurrence of a substring from a string.
  *
  * @param {string} str - The input string.
